@@ -15,6 +15,7 @@ public class destroyGameobject : MonoBehaviour
             GetComponent<Collider2D>().isTrigger=false;
             GetComponent<Rigidbody2D>().isKinematic=false;
             Invoke(nameof(finito),Random.Range(0.2f,.4f));
+            other.GetComponent<PlayerHealthController>().TakeDamage(Random.Range(5,12)) ;
         }
     }
     void finito()

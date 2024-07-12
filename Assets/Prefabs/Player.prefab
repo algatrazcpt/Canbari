@@ -631,7 +631,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 38.01
+  m_PointLightOuterRadius: 50
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -813,6 +813,7 @@ GameObject:
   - component: {fileID: 1227879987}
   - component: {fileID: 1227879993}
   - component: {fileID: 669396814200654781}
+  - component: {fileID: 1603114308}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1056,3 +1057,16 @@ PolygonCollider2D:
       - {x: -0.09425588, y: -0.20795472}
       - {x: 0.090826765, y: -0.21107492}
       - {x: 0.202624, y: -0.22582686}
+--- !u!114 &1603114308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4907122554846787618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acfd0f316de54fc43a16c19580807091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100

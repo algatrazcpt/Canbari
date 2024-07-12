@@ -55,6 +55,7 @@ public class PlayerMovementController : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
+        GetComponent<PlayerHealthController>().TakeDamage(.1f);
         print("azzzuuuuuuuuuuuuu");
     }
 }
