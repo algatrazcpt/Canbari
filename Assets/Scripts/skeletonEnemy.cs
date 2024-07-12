@@ -43,13 +43,14 @@ public class skeletonEnemy : MonoBehaviour
             {
                 timer=0;
                 anim.SetTrigger("Attack");
-
+                print("sdasda");
             }
         }
     }
 
     public void attacksss()
     {
+        
         GameObject heads=Instantiate(this.head,pos.position,quaternion.identity);
         Vector2 direc=heads.transform.position-player.transform.position;
         float dis=Mathf.Atan2(direc.y,direc.x)*Mathf.Rad2Deg;

@@ -30,7 +30,6 @@ public class GreenEnemy : MonoBehaviour
     {
         float dis=Vector2.Distance(transform.position,player.transform.position);
         timer+=Time.deltaTime;
-        print(dis);
         if(dis<2.5)
         {
             path.canMove=false;
