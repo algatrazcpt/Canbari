@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using DG.Tweening;
 
-public class InstensitySkill : SkillBase
+public class SeeRadiusSkill : SkillBase
 {
     [SerializeField] Light2D _playerLight;
     [SerializeField] CinemachineVirtualCamera _cinemachineVirtualCamera;
@@ -18,9 +18,9 @@ public class InstensitySkill : SkillBase
     private void Update()
     {
         // Test
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
-            //StartCoroutine(Use());
+            StartCoroutine(Use());
         }
     }
     public override IEnumerator Use()

@@ -29811,6 +29811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animController: {fileID: 356052416}
+  moveAble: 1
   walkSpeed: 220
   rg: {fileID: 356052414}
 --- !u!1001 &373962751
@@ -70910,7 +70911,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6238939, y: 1}
+    m_SensorSize: {x: 1.4339149, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -71499,7 +71500,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 762bbcaa6d8e20240b848d6b29184eca, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 4b1f193ea3ce1e14d9b8f3f4e4684645, type: 2}
 --- !u!4 &1666692553
 Transform:
   m_ObjectHideFlags: 0

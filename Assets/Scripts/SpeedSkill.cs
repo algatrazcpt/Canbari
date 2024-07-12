@@ -11,15 +11,17 @@ public class SpeedSkill : SkillBase
     private void Update()
     {
         //Test
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.U))
         {
-            //StartCoroutine(Use());
+            StartCoroutine(Use());
         }
     }
     public override IEnumerator Use()
     {
+        print("Speed Used");
         if (!isUsed)
         {
+            print("Speed Used2");
             float exWalkSpeed = playerMovementController.walkSpeed;
             playerMovementController.walkSpeed = exWalkSpeed * walkSpeedMultiplier;
             isUsed = true;
