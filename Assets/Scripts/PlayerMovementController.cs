@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerMovementController : MonoBehaviour
 {
 
-   public Animator animController;
-    bool moveAble = true;
+    public Animator animController;
+    public bool moveAble = true;
     float horizontalInput;
     float verticalInput;
     public float walkSpeed = 20f;
     public Rigidbody2D rg;
-    
+
     public Vector2 MoveDirection()
     {
         return new Vector2(horizontalInput, verticalInput);
