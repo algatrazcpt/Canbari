@@ -9,7 +9,7 @@ public class PlayerMovementController : MonoBehaviour
     bool moveAble = true;
     float horizontalInput;
     float verticalInput;
-    float walkSpeed = 20f;
+    public float walkSpeed = 20f;
     public Rigidbody2D rg;
     
     public Vector2 MoveDirection()
