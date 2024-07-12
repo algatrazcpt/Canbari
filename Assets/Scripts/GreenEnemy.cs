@@ -16,6 +16,7 @@ public class GreenEnemy : MonoBehaviour
     private Vector2 direc;
     private float lookAngle;
     Animator anim;
+    bool isSee;
 
     void Start()
     {
@@ -29,21 +30,28 @@ public class GreenEnemy : MonoBehaviour
     void Update()
     {
         float dis=Vector2.Distance(transform.position,player.transform.position);
-        timer+=Time.deltaTime;
-        if(dis<2.5)
+        isSee=(dis<5)?true:false;
+        if(isSee)
         {
-            path.canMove=false;
-            if(timer>finalTimer)
+            timer+=Time.deltaTime;
+            if(dis>2.5 )
             {
-                timer=0;
-                anim.SetTrigger("Attack");
+                path.canMove=true;
+
             }
-            
+            else
+            {
+                path.canMove=false;
+                if(timer>finalTimer)
+                {
+                    timer=0;
+                    anim.SetTrigger("Attack");
+                    print("sdasda");
+                }
+            }
         }
         else
-        {
-            path.canMove=true;
-        }
+        path.canMove = false;
         
     }
 

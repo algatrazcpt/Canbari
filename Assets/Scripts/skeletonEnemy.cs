@@ -16,7 +16,7 @@ public class skeletonEnemy : MonoBehaviour
     Animator anim;
     public Transform pos;
     public GameObject head;
-    bool isAttack;
+    public bool isSee;
     void Start()
     {
         enemyAI=GetComponent<AIDestinationSetter>();
@@ -29,23 +29,32 @@ public class skeletonEnemy : MonoBehaviour
     void Update()
     {
         float dis=Vector2.Distance(transform.position,player.transform.position);
-        
-        timer+=Time.deltaTime;
-        if(dis>2.5 )
-        {
-            path.canMove=true;
 
-        }
-        else
+
+        isSee=(dis<5)?true:false;
+        if(isSee)
         {
-            path.canMove=false;
-            if(timer>finalTimer)
+            timer+=Time.deltaTime;
+            if(dis>2.5 )
             {
-                timer=0;
-                anim.SetTrigger("Attack");
-                print("sdasda");
+                path.canMove=true;
+
+            }
+            else
+            {
+                path.canMove=false;
+                if(timer>finalTimer)
+                {
+                    timer=0;
+                    anim.SetTrigger("Attack");
+                    print("sdasda");
+                }
             }
         }
+        else
+        path.canMove = false;
+        
+        
     }
 
     public void attacksss()
