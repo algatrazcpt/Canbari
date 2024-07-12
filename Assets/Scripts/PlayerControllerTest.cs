@@ -2,18 +2,34 @@ using UnityEngine;
 
 public class PlayerControllerTest : MonoBehaviour
 {
-    public float speed = 5f; // Oyuncu hýzý
+    public float speed = 5f; // Oyuncu hï¿½zï¿½
 
     void Update()
     {
         // Oyuncunun hareket etmesi
-        float moveHorizontal = Input.GetAxis("Horizontal"); // Saða/sola hareket için giriþ al
-        float moveVertical = Input.GetAxis("Vertical"); // Yukarý/aþaðý hareket için giriþ al
+        float moveHorizontal = Input.GetAxis("Horizontal"); // Saï¿½a/sola hareket iï¿½in giriï¿½ al
+        float moveVertical = Input.GetAxis("Vertical"); // Yukarï¿½/aï¿½aï¿½ï¿½ hareket iï¿½in giriï¿½ al
 
-        // Hareket vektörü oluþtur
+        // Hareket vektï¿½rï¿½ oluï¿½tur
         Vector2 moveDirection = new Vector2(moveHorizontal, moveVertical) * speed * Time.deltaTime;
 
-        // Pozisyonu güncelle
+        // Pozisyonu gï¿½ncelle
         transform.Translate(moveDirection);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag=="mud")
+        {
+            print("deÄŸdi");
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag=="mud")
+        {
+            print("deÄŸdi coll");
+        }
     }
 }

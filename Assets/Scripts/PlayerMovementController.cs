@@ -52,4 +52,9 @@ public class PlayerMovementController : MonoBehaviour
         animController.SetFloat("MovementX", MoveDirection().normalized.x);
         animController.SetFloat("MovmentY", MoveDirection().normalized.y);
     }
+
+    void OnParticleCollision(GameObject other)
+    {
+        print("azzzuuuuuuuuuuuuu");
+    }
 }
