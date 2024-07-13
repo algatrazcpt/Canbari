@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerMovementController : MonoBehaviour
 {
 
-   public Animator animController;
+    public Animator animController;
     bool moveAble = true;
     float horizontalInput;
     float verticalInput;
-    public float walkSpeed = 20f;
+    public float walkSpeed = 220f;
     public Rigidbody2D rg;
     
     public Vector2 MoveDirection()
@@ -37,7 +37,6 @@ public class PlayerMovementController : MonoBehaviour
             {
                 verticalInput = 0f;
             }
-            //rg.velocity=
             rg.velocity = MoveDirection().normalized * walkSpeed * Time.fixedDeltaTime;
             AnimateMove();
         }
