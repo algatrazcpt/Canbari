@@ -12,6 +12,7 @@ public class PlayerHealthController : MonoBehaviour
     public Rigidbody2D rb;
     public void TakeDamage(float amount)
     {
+        soundController.sound.setSound(0);
         health -= amount;
         CheckHealth();
     }
