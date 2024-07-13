@@ -7,6 +7,7 @@ public abstract class SkillBase : MonoBehaviour
     [SerializeField] protected float _duration;
     [SerializeField] public bool isUsed;
     public abstract IEnumerator Use();
+    public abstract void Used();
 
 
 }

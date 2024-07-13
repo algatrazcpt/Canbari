@@ -13,7 +13,7 @@ public class SpeedSkill : SkillBase
         //Test
         if (Input.GetKeyDown(KeyCode.U))
         {
-            StartCoroutine(Use());
+            Used();
         }
     }
     public override IEnumerator Use()
@@ -30,5 +30,10 @@ public class SpeedSkill : SkillBase
             playerMovementController.walkSpeed = exWalkSpeed;
         }
 
+    }
+
+    public override void Used()
+    {
+        StartCoroutine(Use());
     }
 }

@@ -20,7 +20,7 @@ public class SeeRadiusSkill : SkillBase
         // Test
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            StartCoroutine(Use());
+            Used();
         }
     }
     public override IEnumerator Use()
@@ -65,5 +65,10 @@ public class SeeRadiusSkill : SkillBase
             _cinemachineVirtualCamera.m_Lens.OrthographicSize = targetCameraSize;
             isUsed = false;
         });
+    }
+
+    public override void Used()
+    {
+        StartCoroutine(Use());
     }
 }

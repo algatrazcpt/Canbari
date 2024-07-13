@@ -19,7 +19,7 @@ public class RadiusSkill : SkillBase
         {
             if (Input.GetKeyDown(KeyCode.O))
             {
-                StartCoroutine(Use());
+                Used();
             }
             timer += Time.deltaTime;
             if (timer > 1)
@@ -57,4 +57,8 @@ public class RadiusSkill : SkillBase
 
     }
 
+    public override void Used()
+    {
+        StartCoroutine(Use());
+    }
 }

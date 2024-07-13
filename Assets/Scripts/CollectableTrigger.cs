@@ -21,26 +21,28 @@ public class CollectableTrigger : MonoBehaviour
             if (_skillType == skillType.SeeRadius)
             {
                 print("Girdi1");
-                StartCoroutine(collectables._seeRadiusSkill.Use());
+                collectables._seeRadiusSkill.Used();
             }
             else if (_skillType == skillType.Speed)
             {
                 print("Girdi2");
-               StartCoroutine( collectables._speedSkill.Use());
+                collectables._speedSkill.Used();
             }
             else if (_skillType == skillType.Radius)
             {
                 print("Girdi3");
-                StartCoroutine(collectables._radiusSkill.Use());
+                collectables._radiusSkill.Used();
             }
             else if (_skillType == skillType.Teleport)
             {
                 print("print4");
-                collectables._teleportSkill.testObject.SetActive(true);
-                collectables._teleportSkill.playerMovementController.moveAble = false;
-                collectables._teleportSkill.playerMovementController.animController.SetFloat("MovementX",0);
-                collectables._teleportSkill.isUsed = true;
+                collectables._teleportSkill.Used();
+                //collectables._teleportSkill.testObject.SetActive(true);
+                //collectables._teleportSkill.playerMovementController.moveAble = false;
+                //collectables._teleportSkill.playerMovementController.animController.SetFloat("MovementX",0);
+                //collectables._teleportSkill.isUsed = true;
             }
+            this.gameObject.SetActive(false);
         }
     }
 }

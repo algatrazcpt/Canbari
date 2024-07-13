@@ -58,5 +58,9 @@ public class PlayerHealthController : MonoBehaviour
 
 
     }
-    
+    public float GetHealth()
+    {
+        return health;
+    }
+
 }

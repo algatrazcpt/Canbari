@@ -62,4 +62,12 @@ public class TeleportSkill : SkillBase
     {
         yield return null;
     }
+
+    public override void Used()
+    {
+        testObject.SetActive(true);
+        playerMovementController.moveAble = false;
+        playerMovementController.animController.SetFloat("MovementX", 0);
+        isUsed = true;
+    }
 }
