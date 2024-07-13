@@ -53,9 +53,7 @@ public class PlayerMovementController : MonoBehaviour
         animController.SetFloat("MovmentY", MoveDirection().normalized.y);
     }
 
-    void OnParticleCollision(GameObject other)
-    {
-        GetComponent<PlayerHealthController>().TakeDamage(.1f);
-        print("azzzuuuuuuuuuuuuu");
-    }
+    
+
+
 }
