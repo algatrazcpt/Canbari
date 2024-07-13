@@ -396,7 +396,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.667
+  m_FalloffIntensity: 0.67
   m_Color: {r: 1, g: 0.8284439, b: 0.3915094, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
@@ -448,8 +448,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 3
+  m_PointLightInnerRadius: 1.76
+  m_PointLightOuterRadius: 5.1
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -29978,6 +29978,11 @@ MonoBehaviour:
   swordRainCount: 10
   swordRainSpawnRange: 0.5
   swordRainSpawnHeight: 2
+  allLaser:
+  - {fileID: 1410621496}
+  - {fileID: 1873859553}
+  - {fileID: 1718317418}
+  - {fileID: 618813721}
 --- !u!1 &373507356
 GameObject:
   m_ObjectHideFlags: 0
@@ -30439,7 +30444,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.667
+  m_FalloffIntensity: 0.67
   m_Color: {r: 1, g: 0.8284439, b: 0.3915094, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
@@ -30491,8 +30496,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 3
+  m_PointLightInnerRadius: 1.76
+  m_PointLightOuterRadius: 5.1
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -71072,6 +71077,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &618813721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 108760725139898628, guid: 1ebd1fb9f01f09d44841fd98e32c52c7, type: 3}
+  m_PrefabInstance: {fileID: 867463790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &661167781
 GameObject:
   m_ObjectHideFlags: 3
@@ -110920,7 +110930,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.182045, y: 1}
+    m_SensorSize: {x: 1.8279302, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -111050,6 +111060,11 @@ Transform:
   m_Father: {fileID: 908857916}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+--- !u!1 &1410621496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 108760725139898628, guid: 1ebd1fb9f01f09d44841fd98e32c52c7, type: 3}
+  m_PrefabInstance: {fileID: 108760726548390204}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1419099177
 GameObject:
   m_ObjectHideFlags: 0
@@ -118795,6 +118810,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1718317418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 108760725139898628, guid: 1ebd1fb9f01f09d44841fd98e32c52c7, type: 3}
+  m_PrefabInstance: {fileID: 1893558529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1741501781
 GameObject:
   m_ObjectHideFlags: 0
@@ -119558,6 +119578,11 @@ Transform:
   m_Father: {fileID: 908857916}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1873859553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 108760725139898628, guid: 1ebd1fb9f01f09d44841fd98e32c52c7, type: 3}
+  m_PrefabInstance: {fileID: 1047340585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1893558529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122351,7 +122376,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.667
+  m_FalloffIntensity: 0.67
   m_Color: {r: 1, g: 0.8284439, b: 0.3915094, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
@@ -122403,8 +122428,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 3
+  m_PointLightInnerRadius: 1.76
+  m_PointLightOuterRadius: 5.1
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
