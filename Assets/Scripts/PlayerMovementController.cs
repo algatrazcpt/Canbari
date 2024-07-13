@@ -11,23 +11,34 @@ public class PlayerMovementController : MonoBehaviour
     float verticalInput;
     public float walkSpeed = 20f;
     public Rigidbody2D rg;
+ AudioSource attackSource;
 
     public Collider2D swordCol;
-
+void Start()
+{
+    attackSource=GetComponent<AudioSource>();
+}
     public Vector2 MoveDirection()
     {
         return new Vector2(horizontalInput, verticalInput);
     }
-    private void FixedUpdate()
+    void Update()
     {
-        if (moveAble)
-        {
+        if  (moveAble){
             if(Input.GetMouseButtonDown(0)&&!isAttacing)
             {
                 animController.SetBool("isAttack",true);
                 swordCol.enabled=true;
                 isAttacing=true;
+                attackSource.Play();
             }
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (moveAble)
+        {
+            
             if (Input.GetButton("Horizontal"))
             {
                 horizontalInput = Input.GetAxis("Horizontal");
