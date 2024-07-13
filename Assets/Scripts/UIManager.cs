@@ -1,37 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] PlayerHealthController Player;
     [SerializeField] SpeedSkill _speedSkill;
     [SerializeField] GameObject _speedArea;
-    [SerializeField] Image _speedIcon;
-    [SerializeField] Image _speedFillArea;
 
     [SerializeField] TeleportSkill _teleportSkill;
     [SerializeField] GameObject _teleportArea;
-    [SerializeField] Image _teleportIcon;
-    [SerializeField] Image _teleportFillArea;
 
     [SerializeField] SeeRadiusSkill _seeRadiusSkill;
     [SerializeField] GameObject _seeRadiusArea;
-    [SerializeField] Image _seeRadiusIcon;
-    [SerializeField] Image _seeRadiusFillArea;
 
     [SerializeField] RadiusSkill _radiusSkill;
     [SerializeField] GameObject _radiusArea;
-    [SerializeField] Image _radiusIcon;
-    [SerializeField] Image _radiusFillArea;
+    
+    [SerializeField] TextMeshProUGUI _crystalCountText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if(_speedSkill.isUsed){
@@ -65,5 +55,6 @@ public class UIManager : MonoBehaviour
         {
             _radiusArea.SetActive(false);
         }
+        _crystalCountText.text = Player.crystalCount + "/6";
     }
 }

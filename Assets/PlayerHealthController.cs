@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealthController : MonoBehaviour
 {
     [SerializeField] float health;
+    public float crystalCount;
     bool isDead;
     public float sat;
 
