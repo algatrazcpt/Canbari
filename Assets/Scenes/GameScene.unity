@@ -29655,7 +29655,6 @@ GameObject:
   - component: {fileID: 356052413}
   - component: {fileID: 356052416}
   - component: {fileID: 356052417}
-  - component: {fileID: 356052418}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -29812,26 +29811,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animController: {fileID: 356052416}
+  moveAble: 1
   walkSpeed: 220
   rg: {fileID: 356052414}
---- !u!114 &356052418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356052406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a84a7c5cd9af8004c9a464ad9cab05c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swordRainCoolDown: 0
-  spawnRange: 0.5
-  numberOfObjects: 5
-  objectPrefab: {fileID: 2692880052546318444, guid: 17fd53d8a52d8574590b411f854b9d8c, type: 3}
-  moveSpeed: 10
-  spawnHeight: 1
 --- !u!1001 &373962751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70929,7 +70911,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.3375797, y: 1}
+    m_SensorSize: {x: 1.4339149, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -71518,7 +71500,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 762bbcaa6d8e20240b848d6b29184eca, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 4b1f193ea3ce1e14d9b8f3f4e4684645, type: 2}
 --- !u!4 &1666692553
 Transform:
   m_ObjectHideFlags: 0

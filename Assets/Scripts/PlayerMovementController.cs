@@ -6,12 +6,12 @@ public class PlayerMovementController : MonoBehaviour
 {
 
     public Animator animController;
-    bool moveAble = true;
+    public bool moveAble = true;
     float horizontalInput;
     float verticalInput;
-    public float walkSpeed = 220f;
+    public float walkSpeed = 20f;
     public Rigidbody2D rg;
-    
+
     public Vector2 MoveDirection()
     {
         return new Vector2(horizontalInput, verticalInput);
@@ -37,6 +37,7 @@ public class PlayerMovementController : MonoBehaviour
             {
                 verticalInput = 0f;
             }
+            //rg.velocity=
             rg.velocity = MoveDirection().normalized * walkSpeed * Time.fixedDeltaTime;
             AnimateMove();
         }
@@ -50,5 +51,11 @@ public class PlayerMovementController : MonoBehaviour
     {
         animController.SetFloat("MovementX", MoveDirection().normalized.x);
         animController.SetFloat("MovmentY", MoveDirection().normalized.y);
+    }
+
+    void OnParticleCollision(GameObject other)
+    {
+        GetComponent<PlayerHealthController>().TakeDamage(.1f);
+        print("azzzuuuuuuuuuuuuu");
     }
 }
