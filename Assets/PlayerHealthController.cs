@@ -36,7 +36,6 @@ public class PlayerHealthController : MonoBehaviour
     void OnParticleCollision(GameObject other)
     {
         TakeDamage(.1f);
-        print("azzzuuuuuuuuuuuuu");
     }
     void OnCollisionEnter2D(Collision2D other)
     {

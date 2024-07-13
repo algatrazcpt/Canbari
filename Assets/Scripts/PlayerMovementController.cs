@@ -6,11 +6,13 @@ public class PlayerMovementController : MonoBehaviour
 {
 
     public Animator animController;
-    public bool moveAble = true;
+    public bool moveAble = true,isAttacing;
     float horizontalInput;
     float verticalInput;
     public float walkSpeed = 20f;
     public Rigidbody2D rg;
+
+    public Collider2D swordCol;
 
     public Vector2 MoveDirection()
     {
@@ -20,6 +22,12 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (moveAble)
         {
+            if(Input.GetMouseButtonDown(0)&&!isAttacing)
+            {
+                animController.SetBool("isAttack",true);
+                swordCol.enabled=true;
+                isAttacing=true;
+            }
             if (Input.GetButton("Horizontal"))
             {
                 horizontalInput = Input.GetAxis("Horizontal");
@@ -51,6 +59,13 @@ public class PlayerMovementController : MonoBehaviour
     {
         animController.SetFloat("MovementX", MoveDirection().normalized.x);
         animController.SetFloat("MovmentY", MoveDirection().normalized.y);
+    }
+
+    public void attacksFin()
+    {
+        animController.SetBool("isAttack",false);
+        swordCol.enabled = false;
+        isAttacing=false;
     }
 
     

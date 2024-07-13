@@ -11,16 +11,18 @@ public class GreenEnemy : MonoBehaviour
     private PlayerMovementController player;
 
     public ParticleSystem attackMud;
-    public float timer,finalTimer;
+    public float timer,finalTimer,health=100;
 
     private Vector2 direc;
     private float lookAngle;
     Animator anim;
     bool isSee;
+    Rigidbody2D rb;
 
     void Start()
     {
         enemyAI=GetComponent<AIDestinationSetter>();
+        rb=GetComponent<Rigidbody2D>();
         path=GetComponent<AIPath>();
         player=FindObjectOfType<PlayerMovementController>();
         anim=GetComponent<Animator>();
@@ -61,6 +63,31 @@ public class GreenEnemy : MonoBehaviour
         direc=player.transform.position-attackMud.transform.position;
         lookAngle=Mathf.Atan2(direc.y,direc.x)*Mathf.Rad2Deg;
         attackMud.transform.rotation=Quaternion.Euler(lookAngle+180,-90,-90);
+
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag=="sword")
+        {
+            Vector2 vec=transform.position-other.transform.position;
+            rb.isKinematic=false;
+            rb.AddForce(vec*10,ForceMode2D.Impulse);
+            Invoke(nameof(finitoAzuuu),.2f);
+
+            health-=25;
+            print("Değidi");
+            if(health<=0)
+            {
+                print("öldüm");
+            }
+        }
+    }
+
+     void finitoAzuuu()
+    {
+            rb.isKinematic=true;    
+            rb.velocity=Vector2.zero;
+
 
     }
 

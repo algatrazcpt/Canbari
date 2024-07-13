@@ -9,6 +9,7 @@ TagManager:
   - Head
   - Bullet
   - mud
+  - sword
   layers:
   - Default
   - TransparentFX
