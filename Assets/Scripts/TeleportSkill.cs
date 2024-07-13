@@ -19,10 +19,10 @@ public class TeleportSkill : SkillBase
         if (Input.GetKeyDown(KeyCode.I))
         {
             //StartCoroutine(Use());
-            // testObject.SetActive(true);
-            // playerMovementController.moveAble = false;
-            // playerMovementController.animController.SetFloat("MovementX", 0);
-            // isUsed = true;
+            testObject.SetActive(true);
+            playerMovementController.moveAble = false;
+            playerMovementController.animController.SetFloat("MovementX", 0);
+            isUsed = true;
         }
         if (isUsed)
         {

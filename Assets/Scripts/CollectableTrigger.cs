@@ -7,12 +7,10 @@ public class CollectableTrigger : MonoBehaviour
 {
     public enum skillType { SeeRadius, Speed, Radius, Teleport }
     public skillType _skillType;
-    Collectables collectables;
-    AudioSource source;
+   public Collectables collectables;
     private void Start()
     {
         collectables = transform.parent.GetComponent<Collectables>();
-        source=collectables.transform.GetComponent<AudioSource>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,7 +42,6 @@ public class CollectableTrigger : MonoBehaviour
                 //collectables._teleportSkill.playerMovementController.animController.SetFloat("MovementX",0);
                 //collectables._teleportSkill.isUsed = true;
             }
-            source.Play();
             this.gameObject.SetActive(false);
         }
     }

@@ -13,7 +13,7 @@ public class SpeedSkill : SkillBase
         //Test
         if (Input.GetKeyDown(KeyCode.U))
         {
-            // Used();
+            Used();
         }
     }
     public override IEnumerator Use()

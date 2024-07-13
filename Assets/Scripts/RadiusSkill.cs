@@ -19,7 +19,7 @@ public class RadiusSkill : SkillBase
         {
             if (Input.GetKeyDown(KeyCode.O))
             {
-                // Used();
+                Used();
             }
             timer += Time.deltaTime;
             if (timer > 1)
