@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using DG.Tweening;
 
 public class GreenEnemy : MonoBehaviour
 {
@@ -78,7 +79,9 @@ public class GreenEnemy : MonoBehaviour
             print("Değidi");
             if(health<=0)
             {
-                print("öldüm");
+                transform.DOScale(Vector2.zero,1).OnComplete(()=>{
+                    gameObject.SetActive(false);
+                });
             }
         }
     }

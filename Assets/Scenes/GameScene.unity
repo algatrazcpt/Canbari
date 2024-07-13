@@ -29955,8 +29955,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animController: {fileID: 356052416}
   moveAble: 1
+  isAttacing: 0
   walkSpeed: 220
   rg: {fileID: 356052414}
+  swordCol: {fileID: 0}
 --- !u!114 &356052418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110930,7 +110932,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8279302, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -122457,11 +122459,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 108760725139898629, guid: 1ebd1fb9f01f09d44841fd98e32c52c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.94
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 108760725139898629, guid: 1ebd1fb9f01f09d44841fd98e32c52c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.61
+      value: 4.3
       objectReference: {fileID: 0}
     - target: {fileID: 108760725139898629, guid: 1ebd1fb9f01f09d44841fd98e32c52c7, type: 3}
       propertyPath: m_LocalPosition.z

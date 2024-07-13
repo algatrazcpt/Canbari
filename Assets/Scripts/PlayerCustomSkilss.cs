@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerCustomSkilss : MonoBehaviour
@@ -17,7 +19,14 @@ public class PlayerCustomSkilss : MonoBehaviour
 
     public GameObject[] allLaser;
 
-    int currentLaser = 0;
+    [Header("Transition")]
+    public CinemachineVirtualCamera cam;
+    public Transform pos;
+
+    public float traTime=3,camSize=9;
+    [Header("Voice")]
+    public AudioSource voice;
+    public AudioClip first,last;
 
     void Start()
     {
@@ -27,61 +36,75 @@ public class PlayerCustomSkilss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Player skiill key numpad dýþý 9
+        //Player skiill key numpad dï¿½ï¿½ï¿½ 9
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {
             if (!swordRainCoolDown)
             {
-                StartCoroutine("RainSword");
             }
         }
-        if(Input.GetKeyDown(KeyCode.Alpha8))
+
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag=="Player")
         {
-            //kristal bulununca
-            allLaser[currentLaser].GetComponent<Animator>().SetTrigger("LaserFire");
-            if (currentLaser + 1 < 4)
-            {
-                currentLaser++;
-            }
-            else
-            {
-                //laser failed
-            }
+            //if(other.GetComponent<PlayerHealthController>().crystalCount>=6)
+            
+            print(other.GetComponent<PlayerHealthController>().crystalCount);
+            DOTween.To(() => cam.m_Lens.OrthographicSize, x => cam.m_Lens.OrthographicSize = x, camSize, traTime).OnComplete(()=>{
+                foreach (var item in allLaser)
+                {   
+                    item.GetComponent<Animator>().SetTrigger("LaserFire");
+                    //StartCoroutine(RainSword(pos.position));
+                    StartCoroutine(PlayAudioClipsSequentially());
+                    
+                    
+                }
+                cam.Follow=pos;
+
+            });
+            
         }
+        
+    }
+
+
+    IEnumerator PlayAudioClipsSequentially()
+    {
+        voice.clip = first;
+        voice.Play();
+        yield return new WaitForSeconds(voice.clip.length);
+        voice.loop=true;
+
+        voice.clip = last;
+        voice.Play();
     }
 
 
 
-
-
-
-
-
-
-
-
-
-    IEnumerator RainSword()
+    IEnumerator RainSword(Vector2 pos)
     {
         for (int i = 0; i < swordRainCount; i++)
         {
-            // Nesnenin oluþturulma süresini rastgele belirle
+            // Nesnenin oluï¿½turulma sï¿½resini rastgele belirle
             float spawnDelay = Random.Range(0.01f, swordRainSpawnRange);
             yield return new WaitForSeconds(spawnDelay);
 
-            Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 spawnPosition = pos+new Vector2(Random.Range(-7.5f,7.5f),Random.Range(1,-1));
 
-            // Nesnenin oluþturulacaðý yeri belirle
+            // Nesnenin oluï¿½turulacaï¿½ï¿½ yeri belirle
             // Vector3 spawnPosition = new Vector3(Random.Range(-spawnRange, spawnRange), spawnHeight, 0f);
             spawnPosition.z = 0f;
-            // Nesneyi oluþtur
+            // Nesneyi oluï¿½tur
             GameObject newObj = Instantiate(swordRainPreafab, new Vector3(spawnPosition.x, spawnPosition.y + swordRainSpawnHeight, 0), Quaternion.identity);
 
-            // Nesneye bir Rigidbody bileþeni ekle
+            // Nesneye bir Rigidbody bileï¿½eni ekle
             Rigidbody2D rb = newObj.AddComponent<Rigidbody2D>();
-            rb.gravityScale = 0f; // Nesnelerin yerçekimi etkisi olmasýn
+            rb.gravityScale = 0f; // Nesnelerin yerï¿½ekimi etkisi olmasï¿½n
             newObj.GetComponent<BoxCollider2D>().enabled = false;
-            // Nesneyi aþaðýya doðru hareket ettir
+            // Nesneyi aï¿½aï¿½ï¿½ya doï¿½ru hareket ettir
             rb.velocity = Vector2.down * Random.Range(swordRainSpeed - 1, swordRainSpeed + 4);
             StartCoroutine(CheckReachedTargetSwordRain(rb, spawnPosition));
         }
@@ -98,7 +121,7 @@ public class PlayerCustomSkilss : MonoBehaviour
                 rb.GetComponent<BoxCollider2D>().enabled = true;
                 //rb.GetComponent<PlayerSwordRain>().damage = 10f;
                 Destroy(rb.gameObject, 0.5f);
-                Debug.Log("Hedefe Varýldý");
+                Debug.Log("Hedefe Varï¿½ldï¿½");
                 break;
             }
             yield return null;
