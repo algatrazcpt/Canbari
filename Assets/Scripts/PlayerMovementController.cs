@@ -30,6 +30,7 @@ void Start()
                 animController.SetBool("isAttack",true);
                 swordCol.enabled=true;
                 isAttacing=true;
+                Debug.Log("Ses calıyor");
                 attackSource.Play();
             }
         }
